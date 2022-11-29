@@ -1,0 +1,56 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: release/1.7.7
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/madgeek-arc/resource-catalogue-ui-eosc:
+      branch: master
+      repo: https://github.com/madgeek-arc/resource-catalogue-ui-eosc
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/madgeek-arc/resource-catalogue-ui-eosc git:
+        commands:
+        - /usr/bin/env sh .sqa/script.gimpy-coral-javanese.sh
+        container: qc.acc_skinny-orchid-setter
+  QC.Doc:
+    repos:
+      github.com/madgeek-arc/resource-catalogue-ui-eosc find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.hasty-olive-lemur.sh
+        container: qc.doc_frumpy-amethyst-retriever
+      github.com/madgeek-arc/resource-catalogue-ui-eosc git:
+        commands:
+        - /usr/bin/env sh .sqa/script.craggy-brown-wolfhound.sh
+        container: qc.doc_cozy-bronze-cassowary
+      github.com/madgeek-arc/resource-catalogue-ui-eosc markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.wimpy-puce-hamster.sh
+        container: qc.doc_lovely-alizarin-newfoundland
+  QC.Lic:
+    repos:
+      github.com/madgeek-arc/resource-catalogue-ui-eosc licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.ugly-orange-cuscus.sh
+        container: qc.lic_slimy-magenta-otter
+  QC.Sty:
+    repos:
+      github.com/madgeek-arc/resource-catalogue-ui-eosc hadolint:
+        commands:
+        - /usr/bin/env sh .sqa/script.craggy-amaranth-chameleon.sh
+        container: qc.sty_stinky-persimmon-terrier
+      github.com/madgeek-arc/resource-catalogue-ui-eosc jsonlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.squeaky-charcoal-coyote.sh
+        container: qc.sty_scummy-platinum-barracuda
+  QC.Ver:
+    repos:
+      github.com/madgeek-arc/resource-catalogue-ui-eosc get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.stealthy-azure-falcon.sh
+        container: qc.ver_wiggy-eggplant-seahorse
+timeout: 1800
