@@ -2,7 +2,7 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: release/1.7.7
+      branch: release/1.7.11
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/madgeek-arc/resource-catalogue-ui-eosc:
       branch: master
@@ -15,42 +15,42 @@ sqa_criteria:
     repos:
       github.com/madgeek-arc/resource-catalogue-ui-eosc git:
         commands:
-        - /usr/bin/env sh .sqa/script.gimpy-coral-javanese.sh
-        container: qc.acc_skinny-orchid-setter
+        - /usr/bin/env sh .sqa/script.scaly-mustard-tarantula.sh
+        container: qc.acc_snazzy-heliotrope-barracuda
   QC.Doc:
     repos:
       github.com/madgeek-arc/resource-catalogue-ui-eosc find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.hasty-olive-lemur.sh
-        container: qc.doc_frumpy-amethyst-retriever
+        - /usr/bin/env sh .sqa/script.cozy-russet-sloth.sh
+        container: qc.doc_nippy-russet-ragdoll
       github.com/madgeek-arc/resource-catalogue-ui-eosc git:
         commands:
-        - /usr/bin/env sh .sqa/script.craggy-brown-wolfhound.sh
-        container: qc.doc_cozy-bronze-cassowary
+        - /usr/bin/env sh .sqa/script.hilly-ruby-hummingbird.sh
+        container: qc.doc_homely-lavender-akita
       github.com/madgeek-arc/resource-catalogue-ui-eosc markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.wimpy-puce-hamster.sh
-        container: qc.doc_lovely-alizarin-newfoundland
+        - /usr/bin/env sh .sqa/script.droopy-indigo-frise.sh
+        container: qc.doc_bumpy-viridian-duck
   QC.Lic:
     repos:
       github.com/madgeek-arc/resource-catalogue-ui-eosc licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.ugly-orange-cuscus.sh
-        container: qc.lic_slimy-magenta-otter
+        - /usr/bin/env sh .sqa/script.muzzy-sepia-cheetah.sh
+        container: qc.lic_geeky-silver-capuchin
   QC.Sty:
     repos:
       github.com/madgeek-arc/resource-catalogue-ui-eosc hadolint:
         commands:
-        - /usr/bin/env sh .sqa/script.craggy-amaranth-chameleon.sh
-        container: qc.sty_stinky-persimmon-terrier
+        - /usr/bin/env sh .sqa/script.slimy-lime-antelope.sh
+        container: qc.sty_scanty-cinnabar-gar
       github.com/madgeek-arc/resource-catalogue-ui-eosc jsonlint:
         commands:
-        - /usr/bin/env sh .sqa/script.squeaky-charcoal-coyote.sh
-        container: qc.sty_scummy-platinum-barracuda
+        - /usr/bin/env sh .sqa/script.woozy-celadon-rattlesnake.sh
+        container: qc.sty_goopy-orchid-cattle
   QC.Ver:
     repos:
       github.com/madgeek-arc/resource-catalogue-ui-eosc get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.stealthy-azure-falcon.sh
-        container: qc.ver_wiggy-eggplant-seahorse
-timeout: 1800
+        - /usr/bin/env sh .sqa/script.nippy-mustard-birman.sh
+        container: qc.ver_zippy-peach-moth
+timeout: 5400
